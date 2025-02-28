@@ -1,7 +1,9 @@
-
-
+<script>
+    import Scroll from "./Scroll.svelte";
+</script>
 <section class="header">
     <h1 class="logo">DigitalGarden</h1>
+    <Scroll />
 </section>
 
 <nav id="nav-menu" class="nav-menu">
@@ -19,13 +21,13 @@
 .header {
     display: flex;
     justify-content: center;
+    flex-direction: column;
     align-items: center;
     border-bottom: 2px solid #ddd;
 }
 
 .logo {
     font-size: 1.8em;
-    margin-left: 10px;
     font-weight: bold;
     color: rgb(9, 140, 24);
     text-transform: uppercase;
