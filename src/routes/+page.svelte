@@ -8,7 +8,7 @@
     
     $: readmeHtml = converter.makeHtml(data.readme);
 
-    let quotes = [
+   let quotes = [
     "“The best way to predict the future is to create it.” – Alan Kay",
     "“Do not go where the path may lead, go instead where there is no path and leave a trail.” – Ralph Waldo Emerson",
     "“Digital gardens grow with you, unlike blogs which freeze in time.” – Maggie Appleton",
@@ -41,16 +41,24 @@
     "“There are two ways to write error-free programs; only the third one works.” – Alan J. Perlis",
     "“Measuring programming progress by lines of code is like measuring aircraft building progress by weight.” – Bill Gates"
 ];
-
     let quote = quotes[Math.floor(Math.random() * quotes.length)];
 
+    function getNextQuote() {
+        let newQuote;
+        do {
+            newQuote = quotes[Math.floor(Math.random() * quotes.length)];
+        } while (newQuote === quote); // Zorgt ervoor dat de nieuwe quote niet dezelfde is als de vorige
+
+        quote = newQuote;
+    }
+
+    
 </script>
 
 <main>
 
 <section class="more-info">
     <div class="tekst-info">
-        <h2>Ruben Erhardt's <span>Digital Garden</span></h2>
         <p>Notities over het <span>web</span>, <span>WELOVEWEBS</span> en dingen die ik heb <span>geleerd.</span></p>
     </div>
 </section>
@@ -59,7 +67,16 @@
     <img src="/imgs/output-onlinegiftools (3).gif" alt="digital-tree">
 </section>
 
-<blockquote id="random-quote">{quote}</blockquote>
+<button id="random-quote" on:click={getNextQuote} style="all: unset; cursor: pointer;">
+    <blockquote>
+        {quote}
+    </blockquote>
+</button>
+
+<section class="latest">
+    <p class="latest-text">Latest: Digital gardening &nbsp;&nbsp;|&nbsp;&nbsp; Stage @Cosmetique-Totale &nbsp;&nbsp;|&nbsp;&nbsp;Webflow &nbsp;&nbsp;|&nbsp;&nbsp;Updated: 03-03-2025</p>
+</section>
+
 
 <!-- <div class="readme-container">
     {@html readmeHtml}
@@ -72,8 +89,13 @@ main {
     padding: 10px;
 }
 
+
+
 .more-info {
     border-left: 5px solid var(--primary-color);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 16px;
+    font-weight: bold;
 }
 
 .tekst-info {
@@ -81,14 +103,17 @@ main {
 }
 
 .tekst-info p {
-    font-size: 1.4rem;
+    font-size: 20px;
     font-weight: bold;
     margin-top: 10px;
 }
 
 blockquote {
     font-style: italic;
+    cursor: pointer;
 }
+
+
 
 .hero-image{
     display: flex;
@@ -101,15 +126,27 @@ blockquote {
     height: auto;
 }
 
-.tekst-info h2{
-    font-weight: bold;
+.latest {
+    overflow: hidden; /* Hides the overflow content */
+    color: #000000; /* Text color */
+    width: 100%;
+    white-space: nowrap; /* Prevents line breaks */
+}
+
+.latest-text {
+    display: inline-block;
+    padding-left: 20%; /* Start the text off-screen */
+    animation: latest 15s linear infinite; /* Animation settings */
+}
+
+@keyframes latest {
+    from {
+        transform: translateX(100%); /* Start from the right */
+    }
+    to {
+        transform: translateX(-100%); /* End on the left */
+    }
 }
 
 
-.tekst-info span {
-    font-weight: bold;
-    color: var(--primary-color);
-    text-shadow: 0px 0px 10px var(--primary-color);
-    transition: transform 0.3s ease-in-out;
-}
 </style>

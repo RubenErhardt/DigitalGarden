@@ -22,6 +22,7 @@
 <!-- 🚀 Voeg de header en nav toe zodat ze persistent blijven -->
 <section class="header" class:dark-mode={isDarkMode}>
     <h1 class="logo">DigitalGarden</h1>
+    <h2>by <a href="https://github.com/RubenErhardt"><span>Ruben Erhardt</span></h2>
     <div class="walking-guy-header"></div>
 
     <button on:click={toggleDarkMode}>
@@ -84,6 +85,42 @@
     transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
+.header h2{
+    position: absolute;
+    top: 40px;
+    font-size: 18px;
+    font-family: ArcadeClassic, sans-serif;
+}
+
+.header h2 span{
+    animation: glitch 1.5s infinite alternate;
+}
+
+@keyframes glitch {
+    0% {
+        text-shadow: 2px 2px 0px #00ffff, -2px -2px 0px #ff0037;
+    }
+    50% {
+        text-shadow: -2px -2px 0px #00ffff, 2px 2px 0px #ff0037;
+    }
+    100% {
+        text-shadow: 2px -2px 0px #00ffff, -2px 2px 0px #ff0037;
+    }
+}
+
+.header h2 span:hover{
+    animation: none;
+    cursor: pointer;
+}
+
+.header h2 a{
+    text-decoration: none;
+    color:black;
+}
+
+
+
+
 .header button:hover {
     transform: scale(1.1);
 }
@@ -105,7 +142,7 @@
 
     .walking-guy-header {
         position: absolute;
-        top: 58px;
+        top: 60px;
         right: -10px;
         transform: translateY(-50%);
         width: 50px;
@@ -126,7 +163,8 @@
 
     
 .logo {
-    font-size: 1.8em;
+    font-size: 2em;
+    font-family: ArcadeClassic, sans-serif;
     font-weight: bold;
     color: var(--primary-color);
     text-transform: uppercase;
@@ -136,6 +174,7 @@
     view-transition-name: nav-menu;
     display: flex;
     justify-content: center;
+    font-family: 'JetBrains Mono', monospace;
     align-items: center;
     padding: 10px;
     max-width: 100%;
@@ -151,7 +190,7 @@
 .nav-menu ul li a {
     text-decoration: none;
     color: #333;
-    font-weight: 600;
+    font-weight: bold;
     padding: 3px;
     border-radius: 5px;
     transition: background 0.3s ease, color 0.3s ease;

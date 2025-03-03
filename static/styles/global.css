@@ -8,3 +8,20 @@ body{
     --primary-color: rgb(9, 140, 24);
      
 }
+
+@font-face {
+    font-family: "ArcadeClassic";
+    src: url("/fonts/ARCADECLASSIC.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600&display=swap');
+
+body {
+    font-family: 'Manrope', sans-serif;
+    background-color: #ffffff;
+    background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
+    /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+}
