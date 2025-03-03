@@ -1,7 +1,28 @@
 <script>
+    import showdown from 'showdown';
     import Header from "$lib/Header.svelte";
+    export let data;
+
+    let converter = new showdown.Converter();
+    let wikiHtml = '';
+
+    // Markdown omzetten naar HTML
+    $: wikiHtml = converter.makeHtml(data.wiki);
 </script>
 
 <Header />
-<h1>Journal</h1>
-<p>Welkom bij de Journal pagina!</p>
+<main>
+    <h1>📖 Journal - Wiki Logs</h1>
+    <div class="wiki-container">
+        {@html wikiHtml}
+    </div>
+</main>
+
+<style>
+    main {
+        padding: 20px;
+    }
+    .wiki-container {
+        padding: 20px;
+    }
+</style>

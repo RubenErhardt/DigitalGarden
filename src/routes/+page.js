@@ -1,7 +1,8 @@
-export const load = async ({ fetch }) => {
-    
-    const res = await fetch('/api/readme');
-    const data = await res.json();
-
-    return { readme: data.readme || '❌ Geen README ontvangen!' };
-};
+export async function load({ fetch }) {
+    // Haal README op
+    const readmeRes = await fetch('/api/readme');
+    const readmeData = await readmeRes.json();
+    return {
+        readme: readmeData.readme || '❌ Geen README ontvangen!',
+    };
+}

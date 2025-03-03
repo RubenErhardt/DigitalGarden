@@ -11,12 +11,20 @@
 </script>
 
 <Header />
+<main>
+<section class="intro">
+<h2>Ruben Erhardt's <span>Digital Garden</span></h2>
+<p>Notities over het <span>web</span>, <span>WELOVEWEBS</span> en dingen die ik heb <span>geleerd.</span></p>
+</section>
+
 <div class="readme-container">
     {@html readmeHtml}
 </div>
+</main>
 
 <style>
-.readme-container{
-    padding: 10px;
-}
+    main{
+        padding: 10px;
+    }
+
 </style>
