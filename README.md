@@ -1,6 +1,6 @@
 # Cosmetique Totale
 
-# README - Stage bij Cosmetique Totale
+## README - Stage bij Cosmetique Totale
 
 ## 📌 Over mijn stage
 Ik loop stage bij **Cosmetique Totale**, een bedrijf gespecialiseerd in huidtherapie en cosmetische behandelingen.  
