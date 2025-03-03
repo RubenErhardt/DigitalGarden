@@ -1,38 +1,27 @@
-# sv
+# Cosmetique Totale
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+# README - Stage bij Cosmetique Totale
 
-## Creating a project
+## 📌 Over mijn stage
+Ik loop stage bij **Cosmetique Totale**, een bedrijf gespecialiseerd in huidtherapie en cosmetische behandelingen.  
+Mijn stageperiode duurt **20 weken**, waarbij ik **vier dagen per week op kantoor** werk en **één dag per week vanuit huis**.  
+Tijdens mijn stage combineer ik **Webflow met custom code** om flexibele en schaalbare oplossingen te ontwikkelen.
 
-If you're seeing this, you've probably already done this step. Congrats!
+## 🎯 Doelen en werkzaamheden
+- **Projectboard & Wiki**: Ik houd een **projectboard** en **wiki** bij waarin ik documenteer wat ik doe, aantekeningen maak en handige inzichten opsla.  
+- **Redesign project**: Samen met **Nino** werk ik aan een **redesign van een van de dochterbedrijven** van Cosmetique Totale.
+- **Onderzoek & Implementatie**: Ik zoek uit hoe ik Webflow het beste kan combineren met eigen code om de gewenste functionaliteit te realiseren.  
+- **Responsive Design & Performance**: Ik zorg ervoor dat de ontwerpen **responsive, toegankelijk en performant** zijn volgens de RAPPE-principes.  
+- **Samenwerking & Communicatie**: Ik overleg regelmatig met collega's en stakeholders om mijn werk af te stemmen op de behoeften van het bedrijf.  
 
-```bash
-# create a new project in the current directory
-npx sv create
+## 🔧 Tools & Technologieën
+- **Webflow** (voor visuele ontwikkeling en CMS-beheer)  
+- **Custom code** (HTML, CSS, JavaScript in combinatie met Webflow)  
+- **Figma** (voor wireframes en UI-designs)  
+- **GitHub** (voor documentatie en projectbeheer)  
+- **Teams / Asana** (voor communicatie binnen het team)  
 
-# create a new project in my-app
-npx sv create my-app
-```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+## 🚀 Doelstellingen voor mijn stage
+- Webflow beter begrijpen en leren combineren met maatwerkoplossingen.  
+- Ervaring opdoen in het werken met een bestaand team en echte klanten.  
+- Mijn front-end skills verder ontwikkelen en mijn workflow optimaliseren.  

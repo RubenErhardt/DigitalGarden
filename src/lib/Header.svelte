@@ -1,25 +1,33 @@
 <script>
-    import Scroll from "./Scroll.svelte";
+    import { page } from '$app/stores';
 </script>
+
 <section class="header">
     <h1 class="logo">DigitalGarden</h1>
-    <Scroll />
 </section>
 
 <nav id="nav-menu" class="nav-menu">
     <ul>
-        <li><a href="/" class="active">Home</a></li>
-        <li><a href="/journal">Journal</a></li>
-        <li><a href="/">WeLoveWebs</a></li>
-        <li><a href="/">Github</a></li>
+        <li>
+            <a href="/" class={$page.url.pathname === "/" ? "active" : ""}>Home</a>
+        </li>
+        <li>
+            <a href="/journal" class={$page.url.pathname.startsWith("/journal") ? "active" : ""}>Journal</a>
+        </li>
+        <li>
+            <a href="/welovewebs" class={$page.url.pathname.startsWith("/welovewebs") ? "active" : ""}>WeLoveWebs</a>
+        </li>
+        <li>
+            <a href="/github" class={$page.url.pathname.startsWith("/github") ? "active" : ""}>Github</a>
+        </li>
     </ul>
 </nav>
 
-
 <style>
-/* Header styling */
+
 .header {
     display: flex;
+    view-transition-name: header;
     justify-content: center;
     flex-direction: column;
     align-items: center;
@@ -32,43 +40,44 @@
     color: rgb(9, 140, 24);
     text-transform: uppercase;
 }
-
-/* Zorg dat de <ul> een flex-container is */
-    .nav-menu ul {
+/* Standaard styling */
+.nav-menu ul {
+    view-transition-name: nav-menu;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0;
+    padding: 10px;
+    max-width: 100%;
     margin: 0;
 }
 
-/* Stijl per <li> als een duidelijke navbar item */
 .nav-menu ul li {
     list-style: none;
-    margin: 10px 5px; /* Ruimte tussen menu-items */
+    margin:  5px;
 }
 
-/* Stijl voor de <a> (link) */
+/* Stijl voor de links */
 .nav-menu ul li a {
-    text-decoration: none; /* Geen underline */
-    color: #333; /* Neutrale kleur, geen paars */
+    text-decoration: none;
+    color: #333;
     font-weight: 600;
     padding: 3px;
-    border-radius: 5px; /* Ronde hoeken */
+    border-radius: 5px;
     transition: background 0.3s ease, color 0.3s ease;
 }
 
 /* Hover-effect */
 .nav-menu ul li a:hover {
-    background: #f0f0f0; /* Lichtgrijze achtergrond bij hover */
+    background: #f0f0f0;
 }
 
-/* Active item */
+/* Actieve link */
 .nav-menu ul li a.active {
-    background: rgb(9, 140, 24); /* Actieve kleur (groen zoals logo) */
-    color: white; /* Witte tekst op actieve item */
+    background: rgb(9, 140, 24);
+    color: white;
 }
 </style>
+
 
 
 

@@ -1,5 +1,5 @@
 <section class="latest">
-    <p class="scrolling-text">Latest: Mentor Leerjaar 1&nbsp;&nbsp;| Wordpress API&nbsp;&nbsp;| Projectboard workshop&nbsp;&nbsp;|Updated: 01-10-2024 </p>
+    <p class="scrolling-text">Latest: Stage @Cosmetique-Totale | Webflow & custom embedded code&nbsp;&nbsp;| Projectboard workshop&nbsp;&nbsp;|Updated: 03-03-2025 </p>
 </section>
 
 <style>
@@ -7,6 +7,7 @@
     overflow: hidden;
     color: black;
     padding: 2px;
+    width: 100%;
     white-space: nowrap;
     display: flex;
     align-items: center;
@@ -20,7 +21,6 @@
     animation: scrollText 15s linear infinite;
 }
 
-/* Keyframes voor de animatie */
 @keyframes scrollText {
     from {
         transform: translateX(100%);
