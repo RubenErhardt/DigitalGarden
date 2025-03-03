@@ -22,5 +22,7 @@
     }
     .wiki-container {
         padding: 20px;
+        max-width: 320px;
     }
+
 </style>

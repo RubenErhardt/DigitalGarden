@@ -6,43 +6,5 @@ body{
 
 :root{
     --primary-color: rgb(9, 140, 24);
-    --secondary-color: #e5e5f7;
-    --tertiary-color: #f7f7f7;
-    --quaternary-color: #f74545;
-    --quinary-color: #f7f7f7;
-    --senary-color: #f7f7f7;
-    --septenary-color: #f7f7f7;
-    --octonary-color: #f7f7f7;
-    --nonary-color: #f7f7f7;
-    --denary-color: #f7f7f7;
-    --primary-font: 'Roboto', sans-serif;
-    --secondary-font: 'Open Sans', sans-serif;
-    --tertiary-font: 'Montserrat', sans-serif;
-    --quaternary-font: 'Lato', sans-serif;
-    --quinary-font: 'Oswald', sans-serif;
-    --senary-font: 'Raleway', sans-serif;
-    --septenary-font: 'Poppins', sans-serif;
-    --octonary-font: 'Merriweather', sans-serif;
-    --nonary-font: 'Playfair Display', sans-serif;
-    --denary-font: 'Ubuntu', sans-serif;
-    --primary-font-size: 1rem;
-    --secondary-font-size: 1.2rem;
-    --tertiary-font-size: 1.4rem;
-    --quaternary-font-size: 1.6rem;
-    --quinary-font-size: 1.8rem;
-    --senary-font-size: 2rem;
-    --septenary-font-size: 2.2rem;
-    --octonary-font-size: 2.4rem;
-    --nonary-font-size: 2.6rem;
-    --denary-font-size: 2.8rem;
-    --primary-line-height: 1.2;
-    --secondary-line-height: 1.4;
-    --tertiary-line-height: 1.6;
-    --quaternary-line-height: 1.8;
-    --quinary-line-height: 2;
-    --senary-line-height: 2.2;
-    --septenary-line-height: 2.4;
-    --octonary-line-height: 2.6;
-    --nonary-line-height: 2.8;
-    --denary-line-height: 3;    
+     
 }

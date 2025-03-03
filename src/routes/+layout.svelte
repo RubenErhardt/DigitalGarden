@@ -1,23 +1,33 @@
 <script>
     import { onNavigate } from '$app/navigation';
     import { page } from '$app/stores';
+    import { onMount } from 'svelte';
 
-    onNavigate((navigation) => {
-        if (!document.startViewTransition) return;
+    // ✅ Zorgt ervoor dat de dark mode status onthouden wordt (bijv. bij pagina-refresh)
+    let isDarkMode = false;
 
-        return new Promise((resolve) => {
-            document.startViewTransition(async () => {
-                resolve();
-                await navigation.complete;
-            });
-        });
+    // Controleer of de gebruiker al eerder dark mode had aanstaan
+    onMount(() => {
+        isDarkMode = localStorage.getItem("darkMode") === "true";
+        document.documentElement.classList.toggle("dark-mode", isDarkMode);
     });
+
+    function toggleDarkMode() {
+        isDarkMode = !isDarkMode;
+        document.documentElement.classList.toggle("dark-mode", isDarkMode);
+        localStorage.setItem("darkMode", isDarkMode);
+    }
 </script>
 
 <!-- 🚀 Voeg de header en nav toe zodat ze persistent blijven -->
-<section class="header">
+<section class="header" class:dark-mode={isDarkMode}>
     <h1 class="logo">DigitalGarden</h1>
     <div class="walking-guy-header"></div>
+
+    <button on:click={toggleDarkMode}>
+        <span class="icon moon" class:active={!isDarkMode}>🌙</span>
+        <span class="icon sun" class:active={isDarkMode}>🌞</span>
+    </button>
 </section>
 
 <nav class="nav-menu">
@@ -37,55 +47,61 @@
     </ul>
 </nav>
 
-<!-- Dit blijft hetzelfde -->
 <slot/>
 
 <style>
-    @keyframes fade-in {
-        from {
-            opacity: 0;
-        }
-    }
+/* 🌑 Dark mode */
+:root.dark-mode {
+    background: #121212;
+    color: #fff;
+}
 
-    @keyframes fade-out {
-        to {
-            opacity: 0;
-        }
-    }
-
-    @keyframes slide-from-right {
-        from {
-            transform: translateX(30px);
-        }
-    }
-
-    @keyframes slide-to-left {
-        to {
-            transform: translateX(-30px);
-        }
-    }
-
-    :root::view-transition-old(root) {
-        animation:
-            90ms cubic-bezier(0.4, 0, 1, 1) both fade-out,
-            300ms cubic-bezier(0.4, 0, 0.2, 1) both slide-to-left;
-    }
-
-    :root::view-transition-new(root) {
-        animation:
-            210ms cubic-bezier(0, 0, 0.2, 1) 90ms both fade-in,
-            300ms cubic-bezier(0.4, 0, 0.2, 1) both slide-from-right;
-    }
-
-    /* 🚀 Header blijft staan */
-    .header {
+.header {
         display: flex;
         justify-content: center;
         view-transition-name: header;
         flex-direction: column;
+        position: relative;
         align-items: center;
         border-bottom: 2px solid #ddd;
     }
+
+/* ☀️ 🌙 Button Styling */
+.header button {
+    position: absolute;
+    right: -10px;
+    bottom: 40px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    background: none;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.header button:hover {
+    transform: scale(1.1);
+}
+
+/* 🌙 Basisstijl voor iconen */
+.header button .icon {
+    position: absolute;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+    opacity: 0;
+}
+
+/* Actieve icon toont zichzelf */
+.header button .icon.active {
+    opacity: 1;
+    transform: rotate(360deg);
+}
+
+
 
     .walking-guy-header {
         position: absolute;
