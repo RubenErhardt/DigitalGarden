@@ -1,6 +1,5 @@
 <script>
     import showdown from 'showdown';
-    import Header from "$lib/Header.svelte";
     export let data;
 
     let converter = new showdown.Converter();
@@ -10,7 +9,6 @@
     $: wikiHtml = converter.makeHtml(data.wiki);
 </script>
 
-<Header />
 <main>
     <h1>📖 Journal - Wiki Logs</h1>
     <div class="wiki-container">

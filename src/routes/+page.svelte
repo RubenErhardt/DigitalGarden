@@ -1,6 +1,5 @@
 <script>
     import showdown from 'showdown';
-    import Header from "$lib/Header.svelte";
     export let data;
 
     let converter = new showdown.Converter();
@@ -10,12 +9,15 @@
     $: readmeHtml = converter.makeHtml(data.readme);
 </script>
 
-<Header />
 <main>
-<section class="intro">
-<h2>Ruben Erhardt's <span>Digital Garden</span></h2>
-<p>Notities over het <span>web</span>, <span>WELOVEWEBS</span> en dingen die ik heb <span>geleerd.</span></p>
+
+<section class="more-info">
+    <div class="tekst-info">
+        <h2>Ruben Erhardt's <span>Digital Garden</span></h2>
+        <p>Notities over het <span>web</span>, <span>WELOVEWEBS</span> en dingen die ik heb <span>geleerd.</span></p>
+    </div>
 </section>
+
 
 <div class="readme-container">
     {@html readmeHtml}
@@ -26,5 +28,34 @@
     main{
         padding: 10px;
     }
+
+.more-info {
+    border-left: 5px solid var(--primary-color);
+    }
+
+.tekst-info {
+    margin-left: 10px;
+}
+
+.tekst-info p {
+    font-size: 1.4rem;
+    font-weight: 300;
+    margin-top: 10px;
+}
+
+
+.tekst-info span {
+    font-weight: bold;
+    color: var(--primary-color);
+    transition: transform 0.3s ease-in-out;
+}
+
+.tekst-info span:hover {
+    transform: scale(1.1);
+    text-shadow: 0px 0px 10px var(--primary-color);
+}
+
+
+
 
 </style>
