@@ -3,7 +3,6 @@
     import { page } from '$app/stores';
     import { onMount } from 'svelte';
 
-    // ✅ Zorgt ervoor dat de dark mode status onthouden wordt (bijv. bij pagina-refresh)
     let isDarkMode = false;
 
     // Controleer of de gebruiker al eerder dark mode had aanstaan
@@ -51,11 +50,6 @@
 <slot/>
 
 <style>
-/* 🌑 Dark mode */
-:root.dark-mode {
-    background: #121212;
-    color: #fff;
-}
 
 .header {
         display: flex;
@@ -194,6 +188,10 @@
     padding: 3px;
     border-radius: 5px;
     transition: background 0.3s ease, color 0.3s ease;
+}
+
+:root.dark-mode .nav-menu ul li a {
+    color: white; /* Maak de tekst wit in dark mode */
 }
 
 /* Hover-effect */

@@ -1,8 +1,12 @@
 /* src/styles/global.css */
 /* src/styles/global.css */
-body{
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
     overflow-x: hidden;
 }
+
 
 :root{
     --primary-color: rgb(9, 140, 24);
@@ -19,9 +23,25 @@ body{
 
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600&display=swap');
 
+
 body {
     font-family: 'Manrope', sans-serif;
-    background-color: #ffffff;
-    background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
-    /* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+    background-color: var(--background-color);
+    background-image: var(--background-image);
+    color: var(--text-color);
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* 🌑 Dark Mode Variabelen */
+:root {
+    --background-color: #ffffff;
+    --background-image: url("https://www.transparenttextures.com/patterns/asfalt-dark.png");
+    --text-color: #000000;
+}
+
+/* 🌙 Wanneer dark mode aanstaat */
+:root.dark-mode {
+    --background-color: #121212;
+    --background-image: none;
+    --text-color: #ffffff;
 }

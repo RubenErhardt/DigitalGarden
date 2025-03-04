@@ -1,9 +1,13 @@
 <script>
     import showdown from 'showdown';
     export let data;
+    import { onMount } from "svelte";
 
     let converter = new showdown.Converter();
     let readmeHtml = '';
+    let lastUpdated = new Date().toLocaleDateString('nl-NL', {
+        day: 'numeric', month: 'long', year: 'numeric'
+    });
     
     
     $: readmeHtml = converter.makeHtml(data.readme);
@@ -51,21 +55,23 @@
 
         quote = newQuote;
     }
-
-    
 </script>
 
 <main>
 
 <section class="more-info">
     <div class="tekst-info">
-        <p>Notities over het <span>web</span>, <span>WELOVEWEBS</span> en dingen die ik heb <span>geleerd.</span></p>
+        <p class="intro-text">Notities over het <span>web</span>, <span>WELOVEWEBS</span> en dingen die ik heb <span>geleerd.</span></p>
+        <p class="last-updated">Laatst bijgewerkt: {lastUpdated}</p>
     </div>
 </section>
 
 <section class="hero-image">
     <img src="/imgs/output-onlinegiftools (3).gif" alt="digital-tree">
 </section>
+
+
+
 
 <button id="random-quote" on:click={getNextQuote} style="all: unset; cursor: pointer;">
     <blockquote>
@@ -74,7 +80,7 @@
 </button>
 
 <section class="latest">
-    <p class="latest-text">Latest: Digital gardening &nbsp;&nbsp;|&nbsp;&nbsp; Stage @Cosmetique-Totale &nbsp;&nbsp;|&nbsp;&nbsp;Webflow &nbsp;&nbsp;|&nbsp;&nbsp;Updated: 03-03-2025</p>
+    <p class="latest-text">Latest: Digital gardening &nbsp;&nbsp;|&nbsp;&nbsp; Stage @Cosmetique-Totale &nbsp;&nbsp;|</p>
 </section>
 
 
@@ -102,15 +108,42 @@ main {
     margin-left: 10px;
 }
 
-.tekst-info p {
+
+.intro-text {
     font-size: 20px;
     font-weight: bold;
     margin-top: 10px;
 }
 
+.intro-text span {
+    color: var(--primary-color);
+    font-family: ArcadeClassic, sans-serif;
+    text-shadow: 1px 1px 2px rgba(0, 255, 0, 0.5);
+    transition: all 0.3s ease-in-out;
+}
+
+/* Hover-effect voor extra interactie */
+.intro-text span:hover {
+    text-shadow: 2px 2px 4px rgba(0, 255, 0, 0.7);
+    transform: scale(1.1);
+}
+
+
+.last-updated{
+    font-size: 14px;
+    font-weight: bold;
+    font-family: 'JetBrains Mono', monospace;
+}
+
 blockquote {
     font-style: italic;
     cursor: pointer;
+}
+
+.latest-text{
+    font-size: 14px;
+    font-weight: bold;
+    font-family: 'JetBrains Mono', monospace;
 }
 
 
@@ -147,6 +180,4 @@ blockquote {
         transform: translateX(-100%); /* End on the left */
     }
 }
-
-
 </style>
