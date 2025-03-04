@@ -32,6 +32,11 @@ body {
     transition: background 0.3s ease, color 0.3s ease;
 }
 
+img{
+    max-width: 100%;
+    height: auto;
+}
+
 /* 🌑 Dark Mode Variabelen */
 :root {
     --background-color: #ffffff;

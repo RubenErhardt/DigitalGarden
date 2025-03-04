@@ -2,6 +2,7 @@
     import showdown from 'showdown';
     export let data;
     import { onMount } from "svelte";
+    import Projecten from '$lib/Projecten.svelte';
 
     let converter = new showdown.Converter();
     let readmeHtml = '';
@@ -82,6 +83,8 @@
 <section class="latest">
     <p class="latest-text">Latest: Digital gardening &nbsp;&nbsp;|&nbsp;&nbsp; Stage @Cosmetique-Totale &nbsp;&nbsp;|</p>
 </section>
+
+<Projecten />
 
 
 <!-- <div class="readme-container">
@@ -171,6 +174,7 @@ blockquote {
     padding-left: 20%; /* Start the text off-screen */
     animation: latest 15s linear infinite; /* Animation settings */
 }
+
 
 @keyframes latest {
     from {
