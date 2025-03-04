@@ -1,7 +1,64 @@
+
+
 <script>
+
+
     import { onNavigate } from '$app/navigation';
     import { page } from '$app/stores';
     import { onMount } from 'svelte';
+
+    import gsap from 'gsap';
+
+    onNavigate((navigation) => {
+	if (!document.startViewTransition) return;
+
+	return new Promise((resolve) => {
+		document.startViewTransition(async () => {
+			resolve();
+			await navigation.complete;
+		});
+	});
+});
+
+    let isLoaded = false;
+
+    onMount(() => {
+        requestAnimationFrame(() => {
+            gsap.to("body", {
+                opacity: 1,
+                duration: 0.5,
+                ease: "power3.out",
+                onComplete: () => {
+                    isLoaded = true; // Pagina is nu geladen
+                }
+            });
+
+            gsap.from(".logo", {
+                opacity: 0,
+                y: -20,
+                duration: 1,
+                ease: "power3.out"
+            });
+
+            gsap.from(".nav-menu ul li", {
+                opacity: 0,
+                y: 10,
+                stagger: 0.2,
+                duration: 1.2,
+                ease: "power3.out"
+            });
+
+            gsap.from(".hero-image img", {
+                opacity: 0,
+                scale: 0.9,
+                duration: 1.5,
+                delay: 0.3,
+                ease: "power3.out",
+                stagger: 0.2
+            });
+        });
+    });
+
 
     let isDarkMode = false;
 
@@ -17,6 +74,7 @@
         localStorage.setItem("darkMode", isDarkMode);
     }
 </script>
+
 
 <!-- 🚀 Voeg de header en nav toe zodat ze persistent blijven -->
 <section class="header" class:dark-mode={isDarkMode}>
@@ -42,7 +100,7 @@
             <a href="/welovewebs" class={$page.url.pathname.startsWith("/welovewebs") ? "active" : ""}>WeLoveWebs</a>
         </li>
         <li>
-            <a href="/github" class={$page.url.pathname.startsWith("/github") ? "active" : ""}>Github</a>
+            <a href="/projecten" class={$page.url.pathname.startsWith("/projecten") ? "active" : ""}>Projects</a>
         </li>
     </ul>
 </nav>
@@ -50,6 +108,8 @@
 <slot/>
 
 <style>
+
+
 
 .header {
         display: flex;
@@ -138,6 +198,7 @@
         position: absolute;
         top: 60px;
         right: -10px;
+        cursor: pointer;
         transform: translateY(-50%);
         width: 50px;
         height: 50px;
@@ -145,6 +206,35 @@
         background-size: cover;
         animation: walk-header 20s linear infinite;
     }
+
+    .walking-guy-header::after {
+    content: "";
+    position: absolute;
+    top: 20px;
+    left: 10%;
+    width: 10px;
+    height: 10px;
+    background: rgba(200, 200, 200, 0.7);
+    border-radius: 100%;
+    opacity: 0;
+    transform: scale(0);
+    transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+}
+
+.walking-guy-header:hover::after {
+    opacity: 1;
+    cursor: pointer;
+    transform: scale(1.5) translateY(-10px);
+    animation: smoke 1s ease-out infinite;
+}
+
+@keyframes smoke {
+    0% { opacity: 1; transform: scale(1) translateY(0px); }
+    100% { opacity: 0; transform: scale(2) translateY(-20px); }
+}
+
+
+
 
     @keyframes walk-header {
         0% {
@@ -204,4 +294,64 @@
     background: var(--primary-color);
     color: white;
 }
+
+@keyframes fade-in {
+	from {
+		opacity: 0;
+	}
+}
+
+@keyframes fade-out {
+	to {
+		opacity: 0;
+	}
+}
+
+@keyframes slide-from-right {
+	from {
+		transform: translateX(30px);
+	}
+}
+
+@keyframes slide-to-left {
+	to {
+		transform: translateX(-30px);
+	}
+}
+
+:root::view-transition-old(root) {
+	animation:
+		90ms cubic-bezier(0.4, 0, 1, 1) both fade-out,
+		300ms cubic-bezier(0.4, 0, 0.2, 1) both slide-to-left;
+}
+
+:root::view-transition-new(root) {
+	animation:
+		210ms cubic-bezier(0, 0, 0.2, 1) 90ms both fade-in,
+		300ms cubic-bezier(0.4, 0, 0.2, 1) both slide-from-right;
+}
+
+@media (prefers-reduced-motion) {
+	::view-transition-group(*),
+	::view-transition-old(*),
+	::view-transition-new(*) {
+		animation: none !important;
+	}
+}
+
+@media (prefers-reduced-motion: no-preference) {
+	:root::view-transition-old(root) {
+		animation:
+			90ms cubic-bezier(0.4, 0, 1, 1) both fade-out,
+			300ms cubic-bezier(0.4, 0, 0.2, 1) both slide-to-left;
+	}
+
+	:root::view-transition-new(root) {
+		animation:
+			210ms cubic-bezier(0, 0, 0.2, 1) 90ms both fade-in,
+			300ms cubic-bezier(0.4, 0, 0.2, 1) both slide-from-right;
+	}
+}
+
+
 </style>

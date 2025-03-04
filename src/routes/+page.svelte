@@ -2,7 +2,6 @@
     import showdown from 'showdown';
     export let data;
     import { onMount } from "svelte";
-    import Projecten from '$lib/Projecten.svelte';
 
     let converter = new showdown.Converter();
     let readmeHtml = '';
@@ -67,8 +66,11 @@
     </div>
 </section>
 
+
+
 <section class="hero-image">
-    <img src="/imgs/output-onlinegiftools (3).gif" alt="digital-tree">
+    <img src="/imgs/output-onlinegiftools (3).gif" alt="digital-tree" class="tree">
+    <img src="imgs/rokertje.png" alt="rokertje" class="rokertje" width="50" height="50">
 </section>
 
 
@@ -84,8 +86,6 @@
     <p class="latest-text">Latest: Digital gardening &nbsp;&nbsp;|&nbsp;&nbsp; Stage @Cosmetique-Totale &nbsp;&nbsp;|</p>
 </section>
 
-<Projecten />
-
 
 <!-- <div class="readme-container">
     {@html readmeHtml}
@@ -97,6 +97,36 @@
 main {
     padding: 10px;
 }
+.tree {
+    position: relative; /* Maakt de boom de referentie */
+    z-index: 3; /* Boom bovenop */
+    width: 80%;
+}
+
+.rokertje {
+    position: absolute;
+    z-index: 2; /* Rokertje onder de boom */
+    width: 50px;
+    height: 60px;
+    
+    left: 20%; /* Plaats het rokertje naast de boom */
+    top: 52%; /* Midden van de boom */
+    
+    animation: kiekeboe 10s infinite ease-in-out; /* Loopt continu */
+}
+
+@keyframes kiekeboe {
+    0%, 100% {
+        transform: rotate(-10deg) translateX(0) translateY(-50%);
+    }
+    50% {
+        transform: rotate(-5deg) translateX(15px) translateY(-50%); /* Rokertje komt uit boom */
+    }
+}
+
+
+
+
 
 
 
@@ -128,7 +158,6 @@ main {
 /* Hover-effect voor extra interactie */
 .intro-text span:hover {
     text-shadow: 2px 2px 4px rgba(0, 255, 0, 0.7);
-    transform: scale(1.1);
 }
 
 
@@ -157,10 +186,6 @@ blockquote {
     aign-items: center;
 }
 
-.hero-image img{
-    width: 80%;
-    height: auto;
-}
 
 .latest {
     overflow: hidden; /* Hides the overflow content */
