@@ -141,7 +141,7 @@
         transform: translateY(-50%);
         width: 50px;
         height: 50px;
-        background: url('imgs/pngtree-boy-pixel-little-man-illustration-image_1433979-removebg-preview (1).png') no-repeat;
+        background: url('imgs/rokertje') no-repeat;
         background-size: cover;
         animation: walk-header 20s linear infinite;
     }

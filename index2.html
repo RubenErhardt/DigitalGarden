@@ -1,0 +1,20 @@
+<h1>Aantal kaarten: <span id="kaartTeller">100</span></h1>
+<button id="verlaagKaarten">Verlaag aantal</button>
+
+<script>
+    let aantalKaarten = localStorage.getItem("aantalKaarten") 
+        ? parseInt(localStorage.getItem("aantalKaarten")) 
+        : 100;
+
+    document.getElementById("kaartTeller").innerText = aantalKaarten;
+
+    document.getElementById("verlaagKaarten").addEventListener("click", function() {
+        if (aantalKaarten > 0) {
+            aantalKaarten--; 
+            localStorage.setItem("aantalKaarten", aantalKaarten);
+            document.getElementById("kaartTeller").innerText = aantalKaarten; 
+        } else {
+            alert("Geen kaarten meer over!");
+        }
+    });
+</script>
