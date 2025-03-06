@@ -59,6 +59,7 @@
 
 <main>
 
+<div class="hero">
 <section class="more-info">
     <div class="tekst-info">
         <p class="intro-text">Notities over het <span>web</span>, <span>WELOVEWEBS</span> en dingen die ik heb <span>geleerd.</span></p>
@@ -72,7 +73,7 @@
     <img src="/imgs/output-onlinegiftools (3).gif" alt="digital-tree" class="tree">
     <img src="imgs/rokertje.png" alt="rokertje" class="rokertje" width="50" height="50">
 </section>
-
+</div>
 
 
 
@@ -107,10 +108,10 @@ main {
     position: absolute;
     z-index: 2; /* Rokertje onder de boom */
     width: 50px;
-    height: 60px;
+    height: 70px;
     
     left: 20%; /* Plaats het rokertje naast de boom */
-    top: 52%; /* Midden van de boom */
+    top: 58%; /* Midden van de boom */
     
     animation: kiekeboe 10s infinite ease-in-out; /* Loopt continu */
 }
@@ -124,14 +125,42 @@ main {
     }
 }
 
+@media (min-width: 522px) {
+    .rokertje {
+        display: none;
+    }
+}
 
+@media (min-width: 580px) {
+    .hero {
+        display: flex;
+    }
+}
 
+@media (min-width: 800px) {
+    .hero {
+        display: flex;
+        justify-content: space-between;
+    }
+}
 
+@media (min-width: 700px) {
+    .intro-text {
+        font-size: 36px !important;
+    }
+
+    .last-updated {
+        font-size: 18px !important;
+    }
+
+    .tekst-info {
+        padding-left: 20px !important;
+    }
+}
 
 
 
 .more-info {
-    border-left: 5px solid var(--primary-color);
     font-family: 'JetBrains Mono', monospace;
     font-size: 16px;
     font-weight: bold;
@@ -139,6 +168,8 @@ main {
 
 .tekst-info {
     margin-left: 10px;
+    border-left: 5px solid var(--primary-color);
+    padding-left: 10px;
 }
 
 
