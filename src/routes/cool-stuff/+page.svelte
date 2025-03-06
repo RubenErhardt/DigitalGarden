@@ -11,7 +11,7 @@
     wat je zelf ook wilt uitproberen! 🔥</p>
 </section>
 
-<iframe src="/index.html" width="100%" height="1000px" style="border:none;"></iframe>
+<iframe src="/coolstuff.html" width="100%" height="1000px" style="border:none;"></iframe>
 
 <style>
     .cool-stuff-intro {

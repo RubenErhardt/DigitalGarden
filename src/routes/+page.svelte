@@ -111,7 +111,7 @@ main {
     height: 70px;
     
     left: 20%; /* Plaats het rokertje naast de boom */
-    top: 58%; /* Midden van de boom */
+    top: 68%; /* Midden van de boom */
     
     animation: kiekeboe 10s infinite ease-in-out; /* Loopt continu */
 }
