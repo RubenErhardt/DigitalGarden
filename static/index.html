@@ -66,6 +66,9 @@
         gap: 10px;
         width: 40%; /* Beperk breedte van de grid-container */
     }
+
+
+
     .grid-item {
         display: flex;
         align-items: center;
@@ -190,6 +193,78 @@
     svg path:hover {
         cursor: pointer;
     }
+
+     @media screen and (max-width: 768px) {
+    .test {
+        flex-direction: column; /* Zet alles onder elkaar */
+        align-items: center;
+        text-align: center;
+    }
+
+
+    /* Grid-container compacter maken */
+    .grid-container {
+        width: 100%;
+        max-width: 400px;
+        padding: 10px;
+    }
+
+    .grid-item {
+        padding: 10px; 
+        font-size: 12px; /* Kleinere tekst voor mobiel */
+    }
+
+    .circle {
+        width: 25px;
+        height: 25px;
+        font-size: 12px;
+    }
+
+    .price {
+        font-size: 14px;
+    }
+
+    /* Info-card responsive maken */
+    .info-card {
+        width: 90%; /* Breedte beperken */
+        max-width: 400px; /* Zorg dat het niet te breed is */
+        top: 10%;
+        left: 50%;
+        transform: translate(-50%, 0); /* Kaart blijft gecentreerd */
+        padding: 15px;
+        overflow-y: auto; /* Scroll als het scherm te klein is */
+        max-height: 80vh; /* Voorkom dat het scherm volledig gevuld wordt */
+    }
+
+    .info-card h3 {
+        font-size: 18px;
+    }
+
+    .info-card p {
+        font-size: 14px;
+    }
+
+    .important-info {
+        padding: 10px;
+    }
+
+    .important-info h4 {
+        font-size: 16px;
+    }
+
+    .important-info li {
+        font-size: 14px;
+    }
+
+    .cta-button {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
+
+    .close-btn {
+        font-size: 18px;
+    }
+}
 </style>
 
 <script>

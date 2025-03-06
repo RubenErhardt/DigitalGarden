@@ -102,6 +102,8 @@
         <li>
             <a href="/projecten" class={$page.url.pathname.startsWith("/projecten") ? "active" : ""}>Projects</a>
         </li>
+        <li>
+            <a href="/cool-stuff" class={$page.url.pathname.startsWith("/cool-stuff") ? "active" : ""}>Cool-Stuff</a>
     </ul>
 </nav>
 
@@ -257,6 +259,7 @@
 .nav-menu ul {
     view-transition-name: nav-menu;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     font-family: 'JetBrains Mono', monospace;
     align-items: center;
