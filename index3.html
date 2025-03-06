@@ -1,0 +1,46 @@
+<div class="swiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">Slide 1</div>
+      <div class="swiper-slide">Slide 2</div>
+      <div class="swiper-slide">Slide 3</div>
+    </div>
+    <!-- Paginatie -->
+    <div class="swiper-pagination"></div>
+  </div>
+  
+ <style>
+ .swiper-pagination {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .swiper-pagination-bullet {
+    width: 12px;
+    height: 12px;
+    background: #ccc;
+    opacity: 0.5;
+    transition: opacity 0.3s;
+  }
+
+  .swiper-pagination-bullet-active {
+    opacity: 1;
+    background: #007aff;
+  }
+  </style>
+
+  <!-- Swiper CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+<!-- Swiper JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script>
+    var swiper = new Swiper('.swiper', {
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+    });
+  </script>
