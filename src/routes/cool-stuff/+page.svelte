@@ -11,16 +11,22 @@
     wat je zelf ook wilt uitproberen! 🔥</p>
 </section>
 
-<iframe src="/coolstuff.html" width="100%" height="1000px" style="border:none;"></iframe>
+<iframe src="/coolstuff.html"></iframe>
 
 <style>
-    .cool-stuff-intro {
-        padding: 20px;
-    }
 
-    iframe {
-       width: 100%;
-    }
+.cool-stuff-intro {
+    padding: 20px;
+}
+
+iframe {
+    width: 100%;
+    height: auto;
+    min-height: 100vh;
+    border: none;
+}
+
+
 </style>
 
 
