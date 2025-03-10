@@ -183,7 +183,7 @@
 display: flex;
 justify-content: space-between;
 align-items: flex-start;
-height: auto;
+height: 1000px;
 padding: 20px;
 margin: 0 auto;
 }
@@ -464,18 +464,3 @@ document.addEventListener("click", (e) => {
 
 </script>
 
-<script>
-    function adjustIframeHeight() {
-        var iframe = document.querySelector("iframe");
-
-        if (iframe.contentWindow.document.body) {
-            iframe.style.height = iframe.contentWindow.document.body.scrollHeight + "px";
-        }
-    }
-
-    document.querySelector("iframe").addEventListener("load", function () {
-        setTimeout(adjustIframeHeight, 100); // Wacht even tot alles is geladen
-    });
-
-    window.addEventListener("resize", adjustIframeHeight);
-</script>

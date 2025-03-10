@@ -1,5 +1,7 @@
-
-
+<script>
+    import Scrollwatcher from "$lib/Scrollwatcher.svelte";
+    import GridGenerator from "$lib/GridGenerator.svelte";
+</script>
 
 <section class="cool-stuff-intro">
     <h1>Cool Stuff 🚀</h1>
@@ -11,7 +13,14 @@
     wat je zelf ook wilt uitproberen! 🔥</p>
 </section>
 
-<iframe src="/coolstuff.html"></iframe>
+<iframe title="coolstuff" src="/coolstuff.html"></iframe>
+
+<Scrollwatcher />
+
+<GridGenerator />
+
+
+
 
 <style>
 
