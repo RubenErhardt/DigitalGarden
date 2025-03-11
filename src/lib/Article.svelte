@@ -14,7 +14,7 @@
             {
                 title: "Typewriter Effect",
                 description: "Leer hoe je een typemachine-effect maakt met HTML, CSS en JavaScript.",
-                img: "article2.jpg",
+                img: "imgs/https___dev-to-uploads.s3.amazonaws.com_i_0co24qrwnlsczy5d3p53.gif",
                 link: "https://css-tricks.com/snippets/css/typewriter-effect/"
             },
             {
@@ -87,7 +87,10 @@
         font-size: 0.95rem;
         color: #555;
         margin-bottom: 15px;
+
     }
+
+
     
     .article-link {
         text-decoration: none;

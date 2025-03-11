@@ -1,0 +1,73 @@
+<div id="countdown-wrapper">
+    <p id="countdown-container">Countdown wird geladen...</p>
+
+    <div class="counter-box">
+        <p class="counter-container">
+            Verfügbare Plätze: <span id="counter">Laden...</span> OP=OP
+        </p>
+    </div>
+</div>
+
+<style>
+
+#countdown-wrapper{
+ color: #2C4B5F;
+        background: rgba(0, 0, 0, 0.15); /* Heel lichte zwarte achtergrond */
+        padding: 25px;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        max-width: 700px;
+    }
+
+#countdown-container {
+    font-size: 3rem;
+    color: #356274;
+    font-weight: bold;
+}
+
+.counter-container{
+margin-top:20px;
+font-size:2rem;
+color:#BF9658;
+font-weight:bold;
+}
+
+</style>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    function startCountdown(endTime) {
+        function updateCounter() {
+            const now = new Date().getTime();
+            const timeLeft = endTime - now;
+
+            let countdownText = "";
+            if (timeLeft <= 0) {
+                countdownText = "0 - Plätze ausgebucht!";
+                clearInterval(countdownInterval);
+            } else {
+                const days = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
+
+                countdownText = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+            }
+
+            document.getElementById("countdown-container").innerText = "Countdown: " + countdownText;
+        }
+
+        updateCounter(); 
+        const countdownInterval = setInterval(updateCounter, 1000);
+    }
+
+    // **Einddatum instellen (jaar, maand (0 = januari), dag, uur, minuut, seconde)**
+    const endTime = new Date(2025, 8, 15, 12, 0, 0).getTime();
+    startCountdown(endTime);
+});
+
+</script>
