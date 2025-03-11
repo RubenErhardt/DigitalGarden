@@ -114,6 +114,7 @@
 /* Artikel stijl */
 .article {
     border-left: 5px solid var(--primary-color, #009688);
+    padding: 20px;
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
