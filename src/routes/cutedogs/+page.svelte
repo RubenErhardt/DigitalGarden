@@ -13,15 +13,12 @@
   if (error) {
     console.error('Fout bij ophalen:', error);
   } else {
-    console.log('🐶 Gehaalde honden:', data); // Debug info
-    dogs = [...data]; // Forceer een UI update
+    dogs = [...data]; 
   }
 }
 
 fetchDogs();
 
-  
-    // ✅ Voeg een nieuwe hond toe aan Supabase en refresh de lijst
     async function addDog() {
       if (!name || !imageUrl) {
         message = 'Naam en afbeelding zijn verplicht!';
@@ -33,17 +30,16 @@ fetchDogs();
       ]);
   
       if (error) {
-        console.error('Fout bij toevoegen:', error);
         message = 'Er is iets misgegaan!';
       } else {
         message = 'Hond succesvol toegevoegd!';
         name = '';
         imageUrl = '';
-        fetchDogs(); // 🔄 Direct de lijst updaten
+        fetchDogs(); 
       }
     }
   
-    fetchDogs(); // ✅ Haal de honden op bij het laden van de pagina
+    fetchDogs(); 
   </script>
   
   <main>
@@ -71,12 +67,33 @@ fetchDogs();
     main{
         max-width: 1280px;
         margin: 0 auto;
+        width: 100%;
+        justify-content: center;
+        padding: 20px;
+        align-items: center;  
     }
     .gallery {
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
       margin-top: 20px;
+    }
+
+    input {
+      padding: 10px;
+      margin: 5px 0;
+      width: 75%;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+    }
+
+    button {
+      padding: 10px;
+      background-color: var(--primary-color);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
     }
   
     .dog-card {
