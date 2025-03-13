@@ -64,6 +64,7 @@
     <div class="tekst-info">
         <p class="intro-text">Notities over het <span>web</span>, <span>WELOVEWEBS</span> en dingen die ik heb <span>geleerd.</span></p>
         <p class="last-updated">Laatst bijgewerkt: {lastUpdated}</p>
+        
     </div>
 </section>
 
@@ -73,6 +74,7 @@
     <img src="/imgs/output-onlinegiftools (3).gif" alt="digital-tree" class="tree">
     <img src="imgs/rokertje.png" alt="rokertje" class="rokertje" width="50" height="50">
 </section>
+
 </div>
 
 
@@ -87,16 +89,14 @@
     <p class="latest-text">Latest: Digital gardening &nbsp;&nbsp;|&nbsp;&nbsp; Stage @Cosmetique-Totale &nbsp;&nbsp;|</p>
 </section>
 
-
-<!-- <div class="readme-container">
-    {@html readmeHtml}
-</div> -->
 </main>
 
 <style>
 
 main {
     padding: 10px;
+    max-width: 1280px;
+    margin: 0 auto;
 }
 .tree {
     position: relative; /* Maakt de boom de referentie */
