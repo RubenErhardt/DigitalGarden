@@ -111,6 +111,9 @@
         <li>
             <a href="/about" class={$page.url.pathname.startsWith("/about") ? "active" : ""}>About</a>
         </li>
+        <li>
+            <a href="/cutedogs" class={$page.url.pathname.startsWith("/cutedogs") ? "active" : ""}>Cute Dogs</a>
+        </li>
     </ul>
 </nav>
 
