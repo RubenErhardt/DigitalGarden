@@ -1,6 +1,7 @@
 <script>
     import Scrollwatcher from "$lib/Scrollwatcher.svelte";
     import GridGenerator from "$lib/GridGenerator.svelte";
+    import Boot from "$lib/Boot.svelte";
 </script>
 
 <section class="cool-stuff-intro">
@@ -18,6 +19,8 @@
 <Scrollwatcher />
 
 <GridGenerator />
+
+<Boot />
 
 
 
