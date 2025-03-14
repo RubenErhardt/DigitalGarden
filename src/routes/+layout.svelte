@@ -214,7 +214,7 @@
         transform: translateY(-50%);
         width: 50px;
         height: 50px;
-        background: url('imgs/rokertje.png') no-repeat;
+        background: url('/imgs/rokertje.png') no-repeat;
         background-size: cover;
         animation: walk-header 20s linear infinite;
     }
