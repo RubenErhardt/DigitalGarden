@@ -67,6 +67,7 @@ fetchDogs();
     main{
         max-width: 1280px;
         margin: 0 auto;
+        
         width: 100%;
         justify-content: center;
         padding: 20px;

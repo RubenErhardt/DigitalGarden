@@ -9,7 +9,7 @@
     document.getElementById("kaartTeller").innerText = aantalKaarten;
 
     document.getElementById("verlaagKaarten").addEventListener("click", function() {
-        if (aantalKaarten > 0) {
+        if (aantalKaarten > 100) {
             aantalKaarten--; 
             localStorage.setItem("aantalKaarten", aantalKaarten);
             document.getElementById("kaartTeller").innerText = aantalKaarten; 
@@ -18,3 +18,4 @@
         }
     });
 </script>
+
