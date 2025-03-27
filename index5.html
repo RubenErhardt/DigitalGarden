@@ -1,41 +1,134 @@
-<div class="counter-box">
-    <span class="counter-icon">🎟️</span>
-    <span class="counter-label">Noch frei:</span>
-    <span id="counter" class="counter-number">Laden...</span>
-</div>
+<section class="over-section">
+    <div class="over-container">
+      <article class="over-content">
+          <h2 class="over-heading">Mijn passie</h2>
+          
+          <div class="content-wrapper">
+              <div class="text-content">
+                  <p class="over-functie">{{wf {&quot;path&quot;:&quot;functie&quot;,&quot;type&quot;:&quot;PlainText&quot;\} }}</p>
+                  <p class="over-tekst">{{wf {&quot;path&quot;:&quot;biografie-1&quot;,&quot;type&quot;:&quot;PlainText&quot;\} }}</p>
+              </div>
+              
+              <aside class="over-stats">
+                  <div class="over-stat">
+                    <span class="over-icon over-check" aria-hidden="true"></span>
+                    <div>
+                      <strong>15,000 +</strong>
+                      <p>Behandelingen uitgevoerd</p>
+                    </div>
+                  </div>
+                  <div class="over-stat over-stat-uniek">
+                    <span class="over-icon over-star" aria-hidden="true"></span>
+                    <div>
+                      <strong>9,1/10</strong>
+                      <p>Gemiddelde beoordeling</p>
+                    </div>
+                  </div>
+                  <div class="over-stat">
+                    <span class="over-icon over-badge" aria-hidden="true"></span>
+                    <div>
+                      <strong>KNMG en BIG-gecertificeerde specialisten</strong>
+                      <p>Hoog opgeleide behandelaren</p>
+                    </div>
+                  </div>
+              </aside>
+          </div>
+      </article>
+    </div>
+  </section>
+  
+  <style>
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #F4F4F4;
+  }
 
-<style>
-    .counter-box {
+  .over-section {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+    padding: 30px;
+  }
+
+  .over-container {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    max-width: 1200px;
+  }
+
+  .over-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .over-heading {
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 5px;
+  }
+
+  .content-wrapper {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+  }
+
+  .text-content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1;
+  }
+
+  .over-functie,
+  .over-tekst {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #666;
+  }
+
+  /* Statistieken-gedeelte */
+  .over-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    min-width: 300px;
+    max-width: 40%;
+  }
+
+  .over-stat {
     display: flex;
     align-items: center;
-    justify-content: center;
-    background-color: #4CAF50;
-    padding: 12px 20px;
-    border-radius: 8px;
+    background: #235F77;
     color: white;
-    font-size: 1.4rem;
-    font-weight: bold;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
-    border: 2px solid rgba(255, 255, 255, 0.3);
-    letter-spacing: 0.5px;
-    gap: 10px;
-    max-width: fit-content;
-    margin: auto;
-}
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+  }
 
-.counter-icon {
-    font-size: 1.6rem;
-}
+  .over-stat-uniek {
+    margin-left: 20px;
+  }
 
-.counter-label {
-    font-weight: normal;
-    font-size: 1.3rem;
-}
+  .over-stat p {
+    margin: 0;
+    color: white;
+  }
 
-.counter-number {
-    font-weight: bold;
-    font-size: 1.7rem;
-    color: #fff;
-}
+  /* Responsieve styling */
+  @media (max-width: 768px) {
+    .content-wrapper {
+      flex-direction: column;
+      align-items: center;
+    }
 
-</style>
+    .over-stats {
+      margin-top: 20px;
+      max-width: 100%;
+    }
+  }
+  </style>
