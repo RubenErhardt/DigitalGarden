@@ -1,134 +1,179 @@
-<section class="over-section">
-    <div class="over-container">
-      <article class="over-content">
-          <h2 class="over-heading">Mijn passie</h2>
-          
-          <div class="content-wrapper">
-              <div class="text-content">
-                  <p class="over-functie">{{wf {&quot;path&quot;:&quot;functie&quot;,&quot;type&quot;:&quot;PlainText&quot;\} }}</p>
-                  <p class="over-tekst">{{wf {&quot;path&quot;:&quot;biografie-1&quot;,&quot;type&quot;:&quot;PlainText&quot;\} }}</p>
-              </div>
-              
-              <aside class="over-stats">
-                  <div class="over-stat">
-                    <span class="over-icon over-check" aria-hidden="true"></span>
-                    <div>
-                      <strong>15,000 +</strong>
-                      <p>Behandelingen uitgevoerd</p>
-                    </div>
-                  </div>
-                  <div class="over-stat over-stat-uniek">
-                    <span class="over-icon over-star" aria-hidden="true"></span>
-                    <div>
-                      <strong>9,1/10</strong>
-                      <p>Gemiddelde beoordeling</p>
-                    </div>
-                  </div>
-                  <div class="over-stat">
-                    <span class="over-icon over-badge" aria-hidden="true"></span>
-                    <div>
-                      <strong>KNMG en BIG-gecertificeerde specialisten</strong>
-                      <p>Hoog opgeleide behandelaren</p>
-                    </div>
-                  </div>
-              </aside>
-          </div>
-      </article>
+<section class="specialist-section">
+  <div class="specialist-container">
+   
+    <div class="specialist-grid">
+      <figure class="specialist-main-image">
+        <img src="{{wf {&quot;path&quot;:&quot;behandelafbeelding-1&quot;,&quot;type&quot;:&quot;ImageRef&quot;\} }}" 
+             alt="actiefoto {{wf {&quot;path&quot;:&quot;name&quot;,&quot;type&quot;:&quot;PlainText&quot;\} }}" 
+             loading="lazy">
+      </figure>
+
+      <div class="specialist-sub-images">
+        <figure>
+          <img src="{{wf {&quot;path&quot;:&quot;behandelafbeelding-2&quot;,&quot;type&quot;:&quot;ImageRef&quot;\} }}" 
+               alt="behandelfoto {{wf {&quot;path&quot;:&quot;name&quot;,&quot;type&quot;:&quot;PlainText&quot;\} }}" 
+               loading="lazy">
+        </figure>
+        <figure>
+          <img src="{{wf {&quot;path&quot;:&quot;behandelafbeelding-3&quot;,&quot;type&quot;:&quot;ImageRef&quot;\} }}" 
+               alt="behandelfoto {{wf {&quot;path&quot;:&quot;name&quot;,&quot;type&quot;:&quot;PlainText&quot;\} }}" 
+               loading="lazy">
+        </figure>
+      </div>
     </div>
-  </section>
-  
-  <style>
-  body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background-color: #F4F4F4;
-  }
 
-  .over-section {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: #fff;
-    padding: 30px;
-  }
+    <!-- Accordion Informatie -->
+    <aside class="specialist-info">
+      <details open>
+        <summary>Biografie <span class="arrow">▲</span></summary>
+        <p>{{wf {&quot;path&quot;:&quot;biografie-1&quot;,&quot;type&quot;:&quot;PlainText&quot;\} }}</p>
+      </details>
 
-  .over-container {
-    display: flex;
-    flex-direction: column;
-    width: 90%;
-    max-width: 1200px;
-  }
+      <details>
+        <summary>Specialisaties <span class="arrow">▼</span></summary>
+        <p>{{wf {&quot;path&quot;:&quot;specialisaties&quot;,&quot;type&quot;:&quot;PlainText&quot;\} }}</p>
+      </details>
 
-  .over-content {
+      <details>
+        <summary>Trainingen en congressen <span class="arrow">▼</span></summary>
+        <p>{{wf {&quot;path&quot;:&quot;trainingen-en-congressen&quot;,&quot;type&quot;:&quot;PlainText&quot;\} }}</p>
+      </details>
+    </aside>
+  </div>
+</section>
+
+<style>
+  .specialist-container {
     display: flex;
-    flex-direction: column;
     gap: 20px;
   }
-
-  .over-heading {
-    font-size: 32px;
-    font-weight: 600;
-    margin-bottom: 5px;
+  
+  /* Grid voor afbeeldingen */
+  .specialist-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto;
+    width: 50%;
   }
-
-  .content-wrapper {
-    display: flex;
-    gap: 30px;
-    align-items: flex-start;
+  
+  .specialist-main-image img {
+    width: 100%;
+    max-height:100%;
+    border-radius: 8px;
   }
+  
+.specialist-sub-images {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap:10px;
+}
 
-  .text-content {
+.specialist-sub-images img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Zorgt ervoor dat de afbeeldingen de hele ruimte vullen */
+    border-radius: 8px; /* Alleen als je een rand wil, anders weghalen */
+}
+  
+  /* Accordion Stijling */
+  .specialist-info {
+    width: 40%;
     display: flex;
     flex-direction: column;
     gap: 10px;
-    flex: 1;
   }
-
-  .over-functie,
-  .over-tekst {
-    font-size: 16px;
-    line-height: 1.5;
-    color: #666;
-  }
-
-  /* Statistieken-gedeelte */
-  .over-stats {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    min-width: 300px;
-    max-width: 40%;
-  }
-
-  .over-stat {
-    display: flex;
-    align-items: center;
-    background: #235F77;
-    color: white;
+  
+  .specialist-info details {
+    background: #EAE6E3;
     padding: 15px;
-    border-radius: 8px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+    border-radius: 5px;
+    cursor: pointer;
+    overflow: hidden;
+    transition: background-color 0.3s, padding 0.3s;
+  }
+  
+  .specialist-info details[open] {
+    padding: 15px 15px 20px;
+  }
+  
+  /* Pijltjes stijl */
+  .specialist-info summary {
+    font-weight: bold;
+    font-size: 18px;
+    color: black;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .specialist-info details[open] summary .arrow {
+    content: "▲";
+    transition: transform 1s;
+  }
+  
+  /* Dichtgeklapte state */
+  .specialist-info summary .arrow {
+    content: "▼";
+  }
+  
+  .specialist-info details p {
+    margin-top: 8px;
+    font-size: 16px;
+    color: black;
+    opacity: 0;
+    height: 0;
+    overflow: hidden;
+  }
+  
+  .specialist-info details[open] p {
+    opacity: 1;
+    height: auto; 
+    max-height: 1000px;
   }
 
-  .over-stat-uniek {
-    margin-left: 20px;
-  }
+/* Pijl Basisstijl */
+.specialist-info summary .arrow {
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
 
-  .over-stat p {
-    margin: 0;
-    color: white;
-  }
+/* Alleen als een details-element open is, wordt het pijltje gedraaid */
+.specialist-info details[open] summary .arrow {
+    transform: rotate(180deg);
+}
 
-  /* Responsieve styling */
+
+  
+  /* Responsive aanpassingen */
   @media (max-width: 768px) {
-    .content-wrapper {
+    .specialist-container {
       flex-direction: column;
       align-items: center;
     }
-
-    .over-stats {
-      margin-top: 20px;
-      max-width: 100%;
+  
+    .specialist-grid {
+      width: 100%;
+    }
+  
+    .specialist-info {
+      width: 100%;
     }
   }
   </style>
+
+  <script>
+   document.addEventListener('DOMContentLoaded', () => {
+    const allDetails = document.querySelectorAll('.specialist-info details');
+
+    allDetails.forEach(detail => {
+        detail.addEventListener('click', () => {
+            allDetails.forEach(otherDetail => {
+                if (otherDetail !== detail && otherDetail.open) {
+                    otherDetail.open = false;
+                }
+            });
+        });
+    });
+});
+
+  </script>
