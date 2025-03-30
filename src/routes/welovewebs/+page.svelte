@@ -1,6 +1,29 @@
 <div class="container">
     <div class="main-content">
         <article class="article">
+            <h2>Isha Gast</h2>
+            <ul>
+              <li>Toegankelijkheid: maakt dingen toegankelijk voor iedereen.</li>
+              <li>Gemiddeld 10% van de mensen heeft een visuele beperking.</li>
+              <li>56 errors per grote pagina gemiddeld.</li>
+              <li>Het web is voor iedereen – bewustwording is belangrijk.</li>
+              <li>Veel mensen hebben een beperking, vaak zonder dat je het merkt.</li>
+              <li>Toegankelijkheid verbeteren door o.a.:
+                <ul>
+                  <li>Correcte HTML-structuur</li>
+                  <li>Focus states</li>
+                  <li>Contrast</li>
+                  <li>Samenwerken met mensen met een beperking</li>
+                </ul>
+              </li>
+              <li>Alles moet toegankelijk zijn voor elke gebruiker.</li>
+              <li>Belang van volledig invulbare velden voor toetsenbordgebruikers.</li>
+              <li>Gebruik maken van een contrastchecker of -finder.</li>
+            </ul>
+            <p class="datum"></p>
+          </article>
+          
+        <article class="article">
             <h2>Vasilis van Gemert</h2>
             <ul>
                 <li>10 jaar les: enthousiast, geschiedenis van hem -- kunstenaar nieuwe CSS technieken proberen, trial and error</li>
