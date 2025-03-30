@@ -86,7 +86,7 @@
 </button>
 
 <section class="latest">
-    <p class="latest-text">Latest: Digital gardening &nbsp;&nbsp;|&nbsp;&nbsp; Stage @Cosmetique-Totale &nbsp;&nbsp;|</p>
+    <p class="latest-text"> Latest: Digital gardening &nbsp;&nbsp;|&nbsp;&nbsp; Stage @Cosmetique-Totale &nbsp;&nbsp;|</p>
 </section>
 
 </main>
