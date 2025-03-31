@@ -4,26 +4,50 @@
     let articles = [];
 
     onMount(() => {
-        articles = [
-            {
-                title: "A CSS-Only Star Rating Component and More!",
-                description: "Laat zien hoe je een sterrenbeoordelingssysteem maakt met alleen CSS, zonder JavaScript.",
-                img: "/imgs/star-pattern.png",
-                link: "https://css-tricks.com/a-css-only-star-rating-component-and-more-part-2/"
-            },
-            {
-                title: "Typewriter Effect",
-                description: "Leer hoe je een typemachine-effect maakt met HTML, CSS en JavaScript.",
-                img: "imgs/https___dev-to-uploads.s3.amazonaws.com_i_0co24qrwnlsczy5d3p53.gif",
-                link: "https://css-tricks.com/snippets/css/typewriter-effect/"
-            },
-            {
-                title: "Artikel 3",
-                description: "Korte beschrijving van artikel 3.",
-                img: "article3.jpg",
-                link: "https://voorbeeld.com/artikel-3"
-            }
-        ];
+       articles = [
+    {
+        title: "A CSS-Only Star Rating Component and More!",
+        description: "Laat zien hoe je een sterrenbeoordelingssysteem maakt met alleen CSS, zonder JavaScript.",
+        img: "/imgs/star-pattern.png",
+        link: "https://css-tricks.com/a-css-only-star-rating-component-and-more-part-2/"
+    },
+    {
+        title: "Typewriter Effect",
+        description: "Leer hoe je een typemachine-effect maakt met HTML, CSS en JavaScript.",
+        img: "imgs/https___dev-to-uploads.s3.amazonaws.com_i_0co24qrwnlsczy5d3p53.gif",
+        link: "https://css-tricks.com/snippets/css/typewriter-effect/"
+    },
+    {
+        title: "Artikel 3",
+        description: "Korte beschrijving van artikel 3.",
+        img: "article3.jpg",
+        link: "https://voorbeeld.com/artikel-3"
+    },
+    {
+        title: "CSS Grid: Superpowers for Layouts",
+        description: "Een praktische gids om krachtige en responsieve layouts te bouwen met CSS Grid.",
+        img: "/imgs/gridsystem.jpeg",
+        link: "https://css-tricks.com/snippets/css/complete-guide-grid/"
+    },
+    {
+        title: "Intro to SvelteKit Routing",
+        description: "Snelle uitleg over hoe routing werkt in SvelteKit met voorbeelden en tips.",
+        img: "/imgs/svelte-routing.png",
+        link: "https://kit.svelte.dev/docs/routing"
+    },
+    {
+        title: "SVG Animations with CSS",
+        description: "Ontdek hoe je SVG's tot leven brengt met animaties in pure CSS.",
+        img: "/imgs/svg-animation.png",
+        link: "https://css-tricks.com/animating-svg-css/"
+    },
+    {
+        title: "Accessible Buttons: Best Practices",
+        description: "Zorg ervoor dat je knoppen toegankelijk zijn met focus states en semantiek.",
+        img: "/imgs/accessibility.png",
+        link: "https://www.smashingmagazine.com/2021/03/accessible-css-buttons/"
+    }
+];
     });
 </script>
 
