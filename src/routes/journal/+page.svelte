@@ -4,7 +4,12 @@
     
     export let data;
 
-    let converter = new showdown.Converter();
+    let converter = new showdown.Converter({
+  simplifiedAutoLink: true,
+  openLinksInNewWindow: true,
+  ghCompatibleHeaderId: true
+});
+
     let wikiHtml = '';
 
     // Markdown omzetten naar HTML en ID’s fixen
