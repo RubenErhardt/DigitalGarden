@@ -35,6 +35,10 @@
 
 .brand-title {
   display: flex;
+  position: relative;
+  padding: 20px;
+  align-items: center;
+  justify-content: center;
   color: var(--primary-color);
   font-family:ArcadeClassic, sans-serif;
   flex-wrap: wrap;
@@ -107,5 +111,58 @@
     justify-content: center;
   }
 }
+
+.walking-guy-header {
+  position: absolute;
+  top: 39%;
+  right: -10px;
+  width: 50px;
+  height: 50px;
+  background: url('/imgs/rokertje.png') no-repeat;
+  background-size: cover;
+  animation: walk-header 5s linear forwards; /* 1x en blijft in eindtoestand */
+}
+
+    .walking-guy-header::after {
+    content: "";
+    position: absolute;
+    top: 20px;
+    left: 10%;
+    width: 10px;
+    height: 10px;
+    background: rgba(200, 200, 200, 0.7);
+    border-radius: 100%;
+    opacity: 0;
+    transform: scale(0);
+    transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+}
+
+.walking-guy-header:hover::after {
+    opacity: 1;
+    cursor: pointer;
+    transform: scale(1.5) translateY(-10px);
+    animation: smoke 1s ease-out infinite;
+}
+
+@keyframes smoke {
+    0% { opacity: 1; transform: scale(1) translateY(0px); }
+    100% { opacity: 0; transform: scale(2) translateY(-20px); }
+}
+
+
+
+
+@keyframes walk-header {
+  0% {
+    transform: translateY(20%) translateX(100%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(20%) translateX(-100vw);
+    opacity: 0;
+  }
+}
+
+
 
 </style>
