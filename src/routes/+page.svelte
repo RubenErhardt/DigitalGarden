@@ -60,14 +60,14 @@
 
 <main>
 
-<div class="hero">
-<section class="more-info">
+<section class="hero">
+<div class="more-info">
     <div class="tekst-info">
-        <p class="intro-text">Notities over het <span>web</span>, <span>WELOVEWEBS</span> en dingen die ik heb <span>geleerd.</span></p>
+        <p class="intro-text">Notities over het <span>web</span>, <span>WELOVEWEBS</span> en dingen die ik heb <span>geleerd.</span> <span>Bullshit</span> die ik heb gevonden.<span>Cute Dogs</span> uploader die ook heel belangrijk is.Ik doe ook maar wat. <span>Welkom :)</span></p>
         <p class="last-updated">Laatst bijgewerkt: {lastUpdated}</p>
         
     </div>
-</section>
+</div>
 
 
 
@@ -76,7 +76,7 @@
     <img src="imgs/rokertje.png" alt="rokertje" class="rokertje" width="50" height="50">
 </section>
 
-</div>
+</section>
 
 
 
@@ -171,6 +171,7 @@ main {
     margin-left: 10px;
     border-left: 5px solid var(--primary-color);
     padding-left: 10px;
+    max-width: 750px;
 }
 
 
@@ -217,6 +218,7 @@ blockquote {
     justify-content: center;
     aign-items: center;
 }
+
 
 
 .latest {

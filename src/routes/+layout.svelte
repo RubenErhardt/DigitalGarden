@@ -92,7 +92,7 @@ onMount(() => {
 
 <!-- 🚀 Voeg de header en nav toe zodat ze persistent blijven -->
 <section class="header" class:dark-mode={isDarkMode}>
-    <h1 class="logo">DigitalGarden</h1>
+    <h1 class="logo"><a href="/">DigitalGarden</a></h1>
     <h2>by <a href="https://github.com/RubenErhardt"><span>Ruben Erhardt</span></h2>
     <div class="walking-guy-header"></div>
 
@@ -145,6 +145,12 @@ onMount(() => {
         position: relative;
         align-items: center;
         border-bottom: 2px solid #ddd;
+    }
+
+    .logo a{
+        text-decoration: none;
+        color: var(--primary-color);
+
     }
 
 /* ☀️ 🌙 Button Styling */
@@ -208,6 +214,7 @@ onMount(() => {
 /* 🌙 Basisstijl voor iconen */
 .header button .icon {
     position: absolute;
+    right: 20px;
     transition: transform 0.5s ease, opacity 0.5s ease;
     opacity: 0;
 }
@@ -281,46 +288,74 @@ onMount(() => {
 }
 /* Standaard styling */
 .nav-menu ul {
-    view-transition-name: nav-menu;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    font-family: 'JetBrains Mono', monospace;
-    align-items: center;
-    padding: 10px;
-    max-width: 100%;
-    margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 24px;
+  margin: 0;
+  list-style: none;
+  font-family: 'JetBrains Mono', monospace;
+  position: relative;
 }
 
-.nav-menu ul li {
-    list-style: none;
-    margin:  5px;
-}
-
-/* Stijl voor de links */
+/* Links */
 .nav-menu ul li a {
-    text-decoration: none;
-    color: #333;
-    font-weight: bold;
-    padding: 3px;
-    border-radius: 5px;
-    transition: background 0.3s ease, color 0.3s ease;
+  display: inline-block;
+  padding: 6px 12px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #333;
+  text-decoration: none;
+  border-radius: 8px;
+  position: relative;
+  z-index: 2;
+  transition: all 0.3s ease;
 }
 
-:root.dark-mode .nav-menu ul li a {
-    color: white; /* Maak de tekst wit in dark mode */
+/* Hover underline effect */
+.nav-menu ul li a::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 10%;
+  width: 80%;
+  height: 2px;
+  background: var(--primary-color, green);
+  opacity: 0;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
-/* Hover-effect */
-.nav-menu ul li a:hover {
-    background: #f0f0f0;
+.nav-menu ul li a:hover::after {
+  opacity: 1;
+  transform: scaleX(1);
 }
 
 /* Actieve link */
 .nav-menu ul li a.active {
-    background: var(--primary-color);
-    color: white;
+  background: var(--primary-color, green);
+  color: white;
 }
+
+
+/* Dark mode */
+:root.dark-mode .nav-menu ul li a {
+  color: #e0e0e0;
+}
+
+:root.dark-mode .nav-menu ul li a:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--primary-color, green);
+}
+
+:root.dark-mode .nav-menu ul li a.active {
+  background: var(--primary-color, green);
+  color: black;
+}
+
 
 @keyframes fade-in {
 	from {
