@@ -9,6 +9,17 @@
 
     import gsap from 'gsap';
 
+    import Loader from '$lib/Loader.svelte';
+
+let loading = true;
+
+onMount(() => {
+  // Simulate load delay (optioneel)
+  setTimeout(() => {
+    loading = false;
+  }, 2500);
+});
+
     onNavigate((navigation) => {
 	if (!document.startViewTransition) return;
 
@@ -74,6 +85,9 @@
         localStorage.setItem("darkMode", isDarkMode);
     }
 </script>
+
+
+<Loader {loading} />
 
 
 <!-- 🚀 Voeg de header en nav toe zodat ze persistent blijven -->
