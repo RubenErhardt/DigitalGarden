@@ -73,7 +73,6 @@
 
 <section class="hero-image">
     <img src="/imgs/output-onlinegiftools (3).gif" alt="digital-tree" class="tree">
-    <img src="imgs/rokertje.png" alt="rokertje" class="rokertje" width="50" height="50">
 </section>
 
 </section>
@@ -103,33 +102,6 @@ main {
     position: relative; /* Maakt de boom de referentie */
     z-index: 3; /* Boom bovenop */
     width: 80%;
-}
-
-.rokertje {
-    position: absolute;
-    z-index: 2; /* Rokertje onder de boom */
-    width: 50px;
-    height: 70px;
-    
-    left: 20%; /* Plaats het rokertje naast de boom */
-    top: 58%; /* Midden van de boom */
-    
-    animation: kiekeboe 10s infinite ease-in-out; /* Loopt continu */
-}
-
-@keyframes kiekeboe {
-    0%, 100% {
-        transform: rotate(-10deg) translateX(0) translateY(-50%);
-    }
-    50% {
-        transform: rotate(-5deg) translateX(15px) translateY(-50%); /* Rokertje komt uit boom */
-    }
-}
-
-@media (min-width: 522px) {
-    .rokertje {
-        display: none;
-    }
 }
 
 @media (min-width: 580px) {
