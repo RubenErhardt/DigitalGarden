@@ -77,14 +77,6 @@ p{
   left: calc(100% - 1em);
 }
 
-.paper-ship[disabled],
-.paper-ship[disabled]::before,
-.paper-ship[disabled]::after {
-  filter: grayscale(1);
-  animation: none;
-  transition-duration: 0s;
-}
-
 @media (prefers-reduced-motion) {
   .paper-ship,
   .paper-ship::before,

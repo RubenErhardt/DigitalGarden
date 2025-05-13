@@ -52,7 +52,7 @@
         let newQuote;
         do {
             newQuote = quotes[Math.floor(Math.random() * quotes.length)];
-        } while (newQuote === quote); // Zorgt ervoor dat de nieuwe quote niet dezelfde is als de vorige
+        } while (newQuote === quote); 
 
         quote = newQuote;
     }
