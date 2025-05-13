@@ -17,13 +17,9 @@
 <iframe title="coolstuff" src="/coolstuff.html"></iframe>
 
 <Scrollwatcher />
-
 <GridGenerator />
 
 <Boot />
-
-
-
 
 <style>
 

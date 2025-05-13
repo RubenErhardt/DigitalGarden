@@ -128,6 +128,9 @@ onMount(() => {
         <li>
             <a href="/cutedogs" class={$page.url.pathname.startsWith("/cutedogs") ? "active" : ""}>Cute Dogs</a>
         </li>
+         <li>
+            <a href="/eigenarticles" class={$page.url.pathname.startsWith("/eigenarticles") ? "active" : ""}>Eigen Articles</a>
+        </li>
     </ul>
 </nav>
 
