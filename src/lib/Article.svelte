@@ -18,10 +18,10 @@
         link: "https://css-tricks.com/snippets/css/typewriter-effect/"
     },
     {
-        title: "Artikel 3",
-        description: "Korte beschrijving van artikel 3.",
-        img: "article3.jpg",
-        link: "https://voorbeeld.com/artikel-3"
+        title: "Scrollwatcher CSS only",
+        description: "Dit artikel heb ik geschreven over de css only scrollwatcher, hij is kort, want het is ook echt super simpel",
+        img: "imgs/scrollwatcher.png",
+        link: "/eigenarticles"
     },
     {
         title: "CSS Grid: Superpowers for Layouts",
