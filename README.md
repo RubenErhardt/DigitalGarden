@@ -19,10 +19,9 @@ The goal of this project is to:
 | Technology         | Description                                                               |
 |--------------------|---------------------------------------------------------------------------|
 | **SvelteKit**       | Main framework used for routing, SSR, and reactivity.                     |
-| **Tailwind CSS**    | Utility-first CSS for consistent and fast styling.                        |
 | **Markdown**        | Used for blog posts, notes, and structured content.                       |
 | **SVG**             | Custom illustrations and interactive navigation components.               |
-| **JavaScript/TypeScript** | Dynamic functionality and typed logic where appropriate.        |
+| **JavaScript** | Dynamic functionality and typed logic where appropriate.        |
 | **Vite**            | Build tool for blazing-fast hot module reloads and bundling.              |
 
 ## 📁 Project Structure
@@ -43,25 +42,6 @@ The goal of this project is to:
 - **Semantic HTML & accessibility-first**: fully keyboard- and screen reader-friendly.
 - **Mobile-first design** with flexible layouts and scaling components.
 
-## 🌿 Future Plans
-
-- **Git-based publishing system**  
-  Integrate a commit-based workflow to add new notes and auto-generate pages.
-
-- **Graph-based visual overview**  
-  Introduce a mind-map style interface to show relationships between concepts or components.
-
-- **Interactive code playgrounds**  
-  Embed live-editable code snippets for prototyping or demo purposes using `svelte-repl`.
-
-- **Personal tagging system**  
-  Build a custom tagging UI and filter logic to categorize notes by topic or framework.
-
-- **Progress tracker / learning log**  
-  Add a journal-like feature to reflect on weekly learning milestones.
-
-- **PWA support**  
-  Make the garden installable and available offline to encourage continuous writing.
 
 ## 🧠 Why it Matters
 
