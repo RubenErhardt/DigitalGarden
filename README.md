@@ -48,3 +48,25 @@ The goal of this project is to:
 
 This Digital Garden is more than a project—it's a digital reflection of how I think, learn, and grow as a frontend developer. It’s a tool to stay curious, make mistakes, document wins, and experiment freely. Through this project, I demonstrate the ability to connect technologies, structure information, and keep development joyful.
 
+## 🧪 How to Install
+
+To get started with this project locally, follow the steps below. You can use **npm**, **pnpm**, or **yarn** depending on your preference.
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/your-username/digital-garden.git
+cd digital-garden
+
+```using npm
+npm install
+
+```with npm
+npm run dev
+
+```build for production
+npm run build
+
+``Preview the production build locally
+npm run preview
+
