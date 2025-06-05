@@ -1,4 +1,4 @@
-# 🌱 Digital Garden – CMD Internship Project
+# 🌱 Digital Garden – Frontend Internship Project
 
 ## 📌 About this Project
 
