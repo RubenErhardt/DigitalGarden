@@ -25,12 +25,13 @@ The goal of this project is to:
 | **Vite**            | Build tool for blazing-fast hot module reloads and bundling.              |
 
 ## 📁 Project Structure
-/src
-/routes # Pages and endpoints
-/lib # Shared components and utilities
-/content # Markdown-based notes and articles
-/styles # Tailwind config and custom styling
-/static # Assets (images, SVGs, favicons)
+- `/src`
+  - `/routes` – Pages and endpoints
+  - `/lib` – Shared components and utilities
+  - `/content` – Markdown-based notes and articles
+  - `/styles` – custom styling
+- `/static` – Assets (images, SVGs, favicons)
+
 
 
 ## ✨ Key Features
